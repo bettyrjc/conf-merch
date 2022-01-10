@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HiShoppingBag } from 'react-icons/hi';
 import '../styles/components/Header.css';
+import AppContext from '../context/AppContext';
 
 const Header = () => {
+  const { state } = useContext(AppContext);
+  const { cart } = state;
+
   return (
     <div className="Header">
       <Link to="/">
@@ -13,6 +17,7 @@ const Header = () => {
         <Link to="/checkout">
           <HiShoppingBag />
         </Link>
+        {cart.length > 0 && <div className="Header-alert">{cart.length}</div>}
       </div>
     </div>
   );
