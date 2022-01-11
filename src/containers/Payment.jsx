@@ -27,16 +27,15 @@ const Payment = () => {
   };
 
   const handlePaymentSuccess = (data) => {
-    console.log(data);
-    if (data.status === 'COMPLETE') {
-      const newOrder = {
-        buyer: buyer,
-        products: cart,
-        payment: data,
-      };
-      addNewOrder(newOrder);
-      history.push('/checkout/success');
-    }
+    const newOrder = {
+      buyer: buyer,
+      products: cart,
+      payment: data,
+    };
+
+    addNewOrder(newOrder);
+    console.log('push!', newOrder);
+    history.push('/checkout/success');
   };
   return (
     <div className="Payment">
