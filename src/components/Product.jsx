@@ -4,13 +4,13 @@ import '../styles/components/Products.css';
 const Product = ({ product, handleAddToCart }) => {
   return (
     <div className="Products-item">
-      <img src={product.image} alt={product.name} />
+      {/* <img src={`http:http://localhost:1337/${product.image[0].url}`} alt={product.name} /> */}
       <div className="Product-item-info">
         <h2>
-          {product.title}
-          <span>{product.price}</span>
+          {product.attributes.title}
+          <span>{product.attributes.price}</span>
         </h2>
-        <p>{product.description}</p>
+        <p>{product.attributes.description}</p>
         <button className="" type="button" onClick={handleAddToCart(product)}>
           Comprar
         </button>

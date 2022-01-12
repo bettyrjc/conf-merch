@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Products from '../components/Products';
-// import initialState from '../initialState';
 
 const Home = () => {
   return (
@@ -19,7 +18,7 @@ const Home = () => {
         <meta property="og:locale" content="es_ES" />
         <meta property="og:type" content="article" />
       </Helmet>
-      <Products />;
+      <Products />
     </>
   );
 };
